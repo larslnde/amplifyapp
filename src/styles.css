@@ -181,6 +181,8 @@
   
   input[type="email"],
   input[type="text"],
+  input[type="textarea"],
+  input[type="date"],
   input[type="number"] {
     padding: 0.65rem 0.5rem;
     font-size: 1rem;
@@ -196,6 +198,8 @@
   @media (prefers-color-scheme: dark) {
     input[type="email"],
     input[type="text"],
+    input[type="textarea"],
+    input[type="date"],
     input[type="number"] {
       background-color: var(--gray-800);
       border-color: var(--gray-700);
@@ -204,6 +208,8 @@
   
     input[type="email"]::placeholder,
     input[type="text"]::placeholder,
+    input[type="date"]::placeholder,
+    input[type="textarea"]::placeholder,
     input[type="number"]::placeholder,
     select,
     textarea {
@@ -213,10 +219,18 @@
   
   input[type="email"],
   input[type="text"],
+  input[type="date"],
   input[type="number"],
   textarea,
   select {
     width: 400px;
+  }
+
+  input[type="textarea"],
+  textarea,
+  select {
+    width: 400px;
+    height: 160px;
   }
   
   select {
