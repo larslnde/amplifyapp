@@ -45,6 +45,19 @@ const MyTextInput = ({ label, ...props }) => {
   );
 };
 
+const MyTextArea = ({label, ...props}) => {
+  const [field, meta] = useField(props);
+  return (
+      <>
+          <label htmlFor={props.id || props.name}>{label}</label>
+          <textarea className="text-area" {...field} {...props} />
+          {meta.touched && meta.error ? (
+              <div className="error">{meta.error}</div>
+          ) : null}
+      </>
+  );
+};
+
 const MyCheckbox = ({ children, ...props }) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
   return (
@@ -129,10 +142,8 @@ const SignupForm = () => {
           targeted_countries: "",
           growth_strategy: "",
           industry_target_customer: "",
-
           customer_focus: "",
           achievement_hope: "",
-
           hear_about: "",
           anything_else: "",
           phaseType: "",
@@ -163,8 +174,7 @@ const SignupForm = () => {
           incorp_country: Yup.string()
             .oneOf(
               ["c1", "c2"],
-              "Invalid country"
-            )
+              "Invalid country")
             .required("Required"),
           operations_in_other_countries: Yup.string()
             .oneOf(
@@ -337,12 +347,12 @@ const SignupForm = () => {
           <MySelect label="What is your business model?*" name="business_model">
             <option value="">Please Select</option>
             <option value="b2c">B2C</option>
-            <option value="b2b">B2b</option>
+            <option value="b2b">B2B</option>
             <option value="both">Both</option>
             <option value="other">Other</option>
           </MySelect>
-          <MyTextInput
-            label="Describe your company tweet-style (280 characters or less):* MAKE THIS FUNCTION LIKE TEXTAREA"
+          <MyTextArea
+            label="Describe your company tweet-style (280 characters or less):*"
             name="describe_company"
             type="textarea"
             placeholder="Openner is an accelerator for tech startups."
@@ -388,7 +398,7 @@ const SignupForm = () => {
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </MySelect>
-          <MyTextInput
+          <MyTextArea
             label="If yes, how much capital (USD) have you raised, in what format (e.g SAFE, equity, etc), and from whom?"
             name="optional_raised_income"
             type="textarea"
@@ -412,25 +422,25 @@ const SignupForm = () => {
             type="text"
             placeholder="0"
           />
-          <MyTextInput
+          <MyTextArea
             label="Which countries are you targeting to expand to?*"
             name="targeted_countries"
             type="textarea"
             placeholder="Type here"
           />
-          <MyTextInput
+          <MyTextArea
             label="What is your current growth strategy?*"
             name="growth_strategy"
             type="textarea"
             placeholder="Tell us about your customer acquisition, retention and expansion strategy."
           />
-          <MyTextInput
+          <MyTextArea
             label="In which industry does your target customer sit in? (You may input more than 1)*"
             name="industry_target_customer"
             type="textarea"
             placeholder="If your startup targets individual consumers, put 'Customers'."
           />
-          <MyTextInput
+          <MyTextArea
             label="Customer Focus* POTENTIALLY CHANGE TO MULTIPLE TICKBOXES"
             name="customer_focus"
             type="textarea"
@@ -442,7 +452,7 @@ const SignupForm = () => {
             <option value="Phase 2">Phase 2</option>
             <option value="p1p2">Both Phase 1 and 2</option>
           </MySelect>
-          <MyTextInput
+          <MyTextArea
             label="What are you hoping to achieve by attending this program?*"
             name="achievement_hope"
             type="textarea"
@@ -453,7 +463,7 @@ const SignupForm = () => {
             <option value="p1">Placeholder1</option>
             <option value="p2">Placeholder2</option>
           </MySelect>
-          <MyTextInput
+          <MyTextArea
             label="Anything else?"
             name="anything_else"
             type="textarea"
@@ -469,6 +479,7 @@ const SignupForm = () => {
             I agree to recieve updates, newsletters, promotions, and related messages.*
           </MyCheckbox>
           <button type="submit" onClick="submitForm">Submit</button>
+
         </Form>
       </Formik>
     </>
