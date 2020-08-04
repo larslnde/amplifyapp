@@ -431,7 +431,7 @@ const SignupForm = () => {
             placeholder="Tell us about your customer acquisition, retention and expansion strategy."
           />
           <MyTextArea
-            label="In which industry does your target customer sit in? (You may input more than 1)*"
+            label="In which industry does your target customer sit in?*"
             name="industry_target_customer"
             type="textarea"
             placeholder="If your startup targets individual consumers, put 'Customers'."
