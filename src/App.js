@@ -102,10 +102,6 @@ const MyPhoneNumber = ({ label, ...props }) => {
     );
   };
 
-
-
-const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-
 const websiteRegExp = /^((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/;
 
 const numberRegExp = /^[0-9]{1,30}?$/;
@@ -170,7 +166,6 @@ const SignupForm = () => {
             .email("Invalid email addresss")
             .required("Required"),
           phone_number: Yup.string()
-            .matches(phoneRegExp, "Please enter a valid phone number")
             .required("Required"),
           incorp_country: Yup.string()
             .oneOf(
