@@ -183,7 +183,8 @@
   input[type="text"],
   input[type="textarea"],
   input[type="date"],
-  input[type="number"] {
+  input[type="number"],
+  input[type="phonenumber"] {
     padding: 0.65rem 0.5rem;
     font-size: 1rem;
     border: 2px solid var(--gray-200);
@@ -200,7 +201,8 @@
     input[type="text"],
     input[type="textarea"],
     input[type="date"],
-    input[type="number"] {
+    input[type="number"],
+    input[type="phonenumber"] {
       background-color: var(--gray-800);
       border-color: var(--gray-700);
       color: white;
@@ -211,6 +213,7 @@
     input[type="date"]::placeholder,
     input[type="textarea"]::placeholder,
     input[type="number"]::placeholder,
+    input[type="phonenumber"]::placeholder,
     select,
     textarea {
       color: var(--gray-500);
@@ -221,6 +224,7 @@
   input[type="text"],
   input[type="date"],
   input[type="number"],
+  input[type="phonenumber"]
   textarea,
   select {
     width: 400px;
