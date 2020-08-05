@@ -111,6 +111,7 @@ const phoneRegExp = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}/;
 const SignupForm = () => {
   return (
     <>
+      <title>Openner Application</title>
       <h1>Application for the Openner.vc accelerator program</h1>
       <Formik
         initialValues={{
@@ -409,7 +410,7 @@ const SignupForm = () => {
             <option value="3-5">3-5 Co-Founders</option>
             <option value="5+">5+ Co-Founders</option>
           </MySelect>
-          <MySelect label="Does the founding team have majority ownership of the company? (Over 51%)*" name="majority_ownership">
+          <MySelect label="Does the founding team have majority ownership?*" name="majority_ownership">
             <option value="">Please Select</option>
             <option value="yes">Yes, the founders own 51% or more.</option>
             <option value="no">No, the founders own 49% or less.</option>

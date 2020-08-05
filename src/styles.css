@@ -657,6 +657,7 @@
   
   label {
     margin-top: 1rem;
+    max-width: 400px;
   }
   
   label.checkbox {
