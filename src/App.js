@@ -106,6 +106,8 @@ const websiteRegExp = /^((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?
 
 const numberRegExp = /^[0-9]{1,30}?$/;
 
+const phoneRegExp = /^\([0-9]{3}\) [0-9]{3}-[0-9]{4}/;
+
 const SignupForm = () => {
   return (
     <>
@@ -166,11 +168,10 @@ const SignupForm = () => {
             .email("Invalid email addresss")
             .required("Required"),
           phone_number: Yup.string()
+            .matches(phoneRegExp, "Please enter a valid US phone number")
             .required("Required"),
           incorp_country: Yup.string()
-            .oneOf(
-              ["c1", "c2"],
-              "Invalid country")
+            .max(30, "Must be 30 characters or less")
             .required("Required"),
           operations_in_other_countries: Yup.string()
             .oneOf(
@@ -244,7 +245,7 @@ const SignupForm = () => {
             .required("Required"),
           hear_about: Yup.string()
             .oneOf(
-              ["p1", "p2"],
+              ["openneremployee", "angellist", "google", "facebook", "linkedin", "investor", "twitter", "other"],
               "Invalid Job Type")
             .required("Required"),
           anything_else: Yup.string()
@@ -312,11 +313,12 @@ const SignupForm = () => {
             type="text"
             placeholder="(XXX) XXX-XXXX"
           />
-          <MySelect label="Country company was legally incorporated?* CHANGE TO FULL DROPDOWN" name="incorp_country">
-            <option value="">Please Select</option>
-            <option value="c1">Country1</option>
-            <option value="c2">Country2</option>
-          </MySelect>
+          <MyTextInput
+            label="What country was the company legally incorported?*"
+            name="incorp_country"
+            type="text"
+            placeholder="United States"
+          />
           <MyTextInput
             label="Date of incorporation:*"
             name="incorp_date"
@@ -454,10 +456,16 @@ const SignupForm = () => {
             type="textarea"
             placeholder="Type here"
           />
-          <MySelect label="How did you hear about us?* CHANGE TO FULL DROPDOWN" name="hear_about">
+          <MySelect label="How did you hear about us?*" name="hear_about">
             <option value="">Please Select</option>
-            <option value="p1">Placeholder1</option>
-            <option value="p2">Placeholder2</option>
+            <option value="openneremployee">Openner.vc employee</option>
+            <option value="angellist">Angel List</option>
+            <option value="google">Google</option>
+            <option value="facebook">Facebook</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="twitter">Twitter</option>
+            <option value="investor">Investor</option>
+            <option value="other">Other</option>
           </MySelect>
           <MyTextArea
             label="Anything else?"
