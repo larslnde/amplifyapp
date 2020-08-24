@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import { Formik, Form, Field, useField, useFormikContext } from "formik";
+import React from "react";
+import { Formik, Form, useField } from "formik";
 import * as Yup from "yup";
 import "./styles.css";
 import "./styles-custom.css";
 import MaskedInput from 'react-text-mask'
-import { configure } from "@testing-library/react";
+//import { configure } from "@testing-library/react";
 //import Amplify, { API } from 'aws-amplify';
-//import DatePicker from "react-datepicker";
 
 
 /*Amplify.configure({
@@ -369,7 +368,7 @@ const SignupForm = () => {
             <option value="growth">Growth stage / Post-PMF</option>
           </MySelect>
           <MyTextInput
-            label="How many monthly active customers do you currently have?:*"
+            label="How many monthly active customers do you currently have?*"
             name="monthly_users"
             type="text"
             placeholder="0"
