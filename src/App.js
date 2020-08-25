@@ -315,7 +315,7 @@ const SignupForm = () => {
         
         onSubmit={async (values, { props, setSubmitting }) => {
           //alert(JSON.stringify(values, null, 2));
-          alert("test");
+          await alert("test");
           axios.post(axiospost, JSON.stringify(values, null, 2))
           //this.props.history.push('/submitted')
           await new Promise(r => setTimeout(r, 500));
