@@ -7,6 +7,7 @@ import MaskedInput from 'react-text-mask'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import OpennerLogo from "./OpennerLogo.png";
 import { BrowserRouter as Router, Route ,Switch } from 'react-router-dom';
+import Home from "./Home";
 //import submitted from './submitted';
 
 
@@ -313,9 +314,10 @@ const SignupForm = () => {
         // })}
         
         onSubmit={async (values, { props, setSubmitting }) => {
-          //alert(JSON.stringify(values, null, 2));
+          alert(JSON.stringify(values, null, 2));
+          //alert("test");
           axios.post(axiospost, JSON.stringify(values, null, 2))
-          //history.push('/submitted')
+          //this.props.history.push('/submitted')
           await new Promise(r => setTimeout(r, 500));
           setSubmitting(false);
         }}
