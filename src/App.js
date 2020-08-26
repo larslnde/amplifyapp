@@ -198,123 +198,124 @@ const SignupForm = () => {
           company_name: Yup.string()
             .max(20, "Must be 20 characters or less")
             .required("Required"),
-          company_website: Yup.string()
-            .matches(websiteRegExp, 'Please enter a valid url')
-            .required("Required"),
-          first_name: Yup.string()
-            .max(15, "Must be 15 characters or less")
-            .required("Required"),
-          surname: Yup.string()
-            .max(20, "Must be 20 characters or less")
-            .required("Required"),
-          email: Yup.string()
-            .email("Invalid email addresss")
-            .required("Required"),
-          phone_number: Yup.string()
-            //.matches(phoneRegExp, "Please enter a valid US phone number")
-            .required("Required"),
-          incorp_country: Yup.string()
-            .max(30, "Must be 30 characters or less")
-            .required("Required"),
-          operations_in_other_countries: Yup.string()
-            .oneOf(
-            ["yes", "no"],
-            "Please select an answer")
-            .required("Required"),
-          optional_other_countries: Yup.string()
-            .max(100, "Must be 100 characters or less"),
-          sector: Yup.string()
-            .max(15, "Must be 15 characters or less")
-            .required("Required"),
-          business_model: Yup.string()
-            .oneOf(
-            ["b2b", "b2c", "both", "other"], 
-            "Please select an answer")
-            .required("Required"),
-          describe_company: Yup.string()
-            .max(280, "Must be 280 characters or less")
-            .required("Required"),
-          pitch_deck: Yup.string()
-            .max(20, "Must be 20 characters or less")
-            .required("Required"),
-          company_stage: Yup.string()
-            .oneOf(
-            ["prelaunch", "launch", "growth"], 
-            "Please select an answer")
-            .required("Required"),
-          monthly_users: Yup.string()
-            .matches(numberRegExp, "Monthly users must be a number")
-            .required("Required"),
-          revenue_1mo: Yup.string()
-            .matches(numberRegExp, "Revenue must be a number")
-            .required("Required"),
-          revenue_2mo: Yup.string()
-            .matches(numberRegExp, "Revenue must be a number")
-            .required("Required"),
-          revenue_3mo: Yup.string()
-            .matches(numberRegExp, "Revenue must be a number")
-            .required("Required"),
-          raised_capital: Yup.string()
-          .oneOf(
-            ["yes", "no"], 
-            "Please select an answer")
-            .required("Required"),
-          optional_raised_capital: Yup.string()
-            .max(280, "Must be 280 characters or less"),
-          founding_team_size: Yup.string()
-            .oneOf(
-              ["1", "2", "3-5", "5+"], 
-              "Please select an answer")
-            .required("Required"),
-          majority_ownership: Yup.string()
-            .oneOf(
-              ["yes", "no"], 
-              "Please select an answer")
-            .required("Required"),
-          months_runway: Yup.string()
-            .matches(numberRegExp, "Revenue must be a number")
-            .required("Required"),
-          targeted_countries: Yup.string()
-            .max(280, "Must be 280 characters or less")
-            .required("Required"),
-          growth_strategy: Yup.string()
-            .max(280, "Must be 280 characters or less")
-            .required("Required"),
-          industry_target_customer: Yup.string()
-            .max(280, "Must be 280 characters or less")
-            .required("Required"),
-          customer_focus: Yup.string()
-            .max(280, "Must be 280 characters or less")
-            .required("Required"),
-          hear_about: Yup.string()
-            .oneOf(
-              ["openneremployee", "angellist", "google", "facebook", "linkedin", "investor", "twitter", "other"],
-              "Invalid Job Type")
-            .required("Required"),
-          anything_else: Yup.string()
-          .max(280, "Must be 280 characters or less"),
-          phaseType: Yup.string()
-          .oneOf(
-            ["Phase 1", "Phase 2", "p1p2"],
-            "Invalid Job Type")
-          .required("Required"),
-          achievement_hope: Yup.string()
-            .max(280, "Must be 280 characters or less")
-            .required("Required"),
-          privacy_policy: Yup.boolean()
-            .oneOf([true], "You must accept the privacy policy.")
-            .required("Required"),
-          timezone: Yup.boolean()
-            .oneOf([true], "Please complete this required field.")
-            .required("Required"),
-          newsletter: Yup.boolean()
-            .oneOf([true], "Please complete this required field.")
-            .required("Required"),
+          // company_website: Yup.string()
+          //   .matches(websiteRegExp, 'Please enter a valid url')
+          //   .required("Required"),
+          // first_name: Yup.string()
+          //   .max(15, "Must be 15 characters or less")
+          //   .required("Required"),
+          // surname: Yup.string()
+          //   .max(20, "Must be 20 characters or less")
+          //   .required("Required"),
+          // email: Yup.string()
+          //   .email("Invalid email addresss")
+          //   .required("Required"),
+          // phone_number: Yup.string()
+          //   //.matches(phoneRegExp, "Please enter a valid US phone number")
+          //   .required("Required"),
+          // incorp_country: Yup.string()
+          //   .max(30, "Must be 30 characters or less")
+          //   .required("Required"),
+          // operations_in_other_countries: Yup.string()
+          //   .oneOf(
+          //   ["yes", "no"],
+          //   "Please select an answer")
+          //   .required("Required"),
+          // optional_other_countries: Yup.string()
+          //   .max(100, "Must be 100 characters or less"),
+          // sector: Yup.string()
+          //   .max(15, "Must be 15 characters or less")
+          //   .required("Required"),
+          // business_model: Yup.string()
+          //   .oneOf(
+          //   ["b2b", "b2c", "both", "other"], 
+          //   "Please select an answer")
+          //   .required("Required"),
+          // describe_company: Yup.string()
+          //   .max(280, "Must be 280 characters or less")
+          //   .required("Required"),
+          // pitch_deck: Yup.string()
+          //   .max(20, "Must be 20 characters or less")
+          //   .required("Required"),
+          // company_stage: Yup.string()
+          //   .oneOf(
+          //   ["prelaunch", "launch", "growth"], 
+          //   "Please select an answer")
+          //   .required("Required"),
+          // monthly_users: Yup.string()
+          //   .matches(numberRegExp, "Monthly users must be a number")
+          //   .required("Required"),
+          // revenue_1mo: Yup.string()
+          //   .matches(numberRegExp, "Revenue must be a number")
+          //   .required("Required"),
+          // revenue_2mo: Yup.string()
+          //   .matches(numberRegExp, "Revenue must be a number")
+          //   .required("Required"),
+          // revenue_3mo: Yup.string()
+          //   .matches(numberRegExp, "Revenue must be a number")
+          //   .required("Required"),
+          // raised_capital: Yup.string()
+          // .oneOf(
+          //   ["yes", "no"], 
+          //   "Please select an answer")
+          //   .required("Required"),
+          // optional_raised_capital: Yup.string()
+          //   .max(280, "Must be 280 characters or less"),
+          // founding_team_size: Yup.string()
+          //   .oneOf(
+          //     ["1", "2", "3-5", "5+"], 
+          //     "Please select an answer")
+          //   .required("Required"),
+          // majority_ownership: Yup.string()
+          //   .oneOf(
+          //     ["yes", "no"], 
+          //     "Please select an answer")
+          //   .required("Required"),
+          // months_runway: Yup.string()
+          //   .matches(numberRegExp, "Revenue must be a number")
+          //   .required("Required"),
+          // targeted_countries: Yup.string()
+          //   .max(280, "Must be 280 characters or less")
+          //   .required("Required"),
+          // growth_strategy: Yup.string()
+          //   .max(280, "Must be 280 characters or less")
+          //   .required("Required"),
+          // industry_target_customer: Yup.string()
+          //   .max(280, "Must be 280 characters or less")
+          //   .required("Required"),
+          // customer_focus: Yup.string()
+          //   .max(280, "Must be 280 characters or less")
+          //   .required("Required"),
+          // hear_about: Yup.string()
+          //   .oneOf(
+          //     ["openneremployee", "angellist", "google", "facebook", "linkedin", "investor", "twitter", "other"],
+          //     "Invalid Job Type")
+          //   .required("Required"),
+          // anything_else: Yup.string()
+          // .max(280, "Must be 280 characters or less"),
+          // phaseType: Yup.string()
+          // .oneOf(
+          //   ["Phase 1", "Phase 2", "p1p2"],
+          //   "Invalid Job Type")
+          // .required("Required"),
+          // achievement_hope: Yup.string()
+          //   .max(280, "Must be 280 characters or less")
+          //   .required("Required"),
+          // privacy_policy: Yup.boolean()
+          //   .oneOf([true], "You must accept the privacy policy.")
+          //   .required("Required"),
+          // timezone: Yup.boolean()
+          //   .oneOf([true], "Please complete this required field.")
+          //   .required("Required"),
+          // newsletter: Yup.boolean()
+          //   .oneOf([true], "Please complete this required field.")
+          //   .required("Required"),
         })}
         
         onSubmit={async (values, { props, setSubmitting }) => {
           //alert(JSON.stringify(values, null, 2));
           await alert("test");
+          window.location.replace("http://www.openner.vc");
           //axios.post(axiospost, JSON.stringify(values, null, 2))
           //this.props.history.push('/submitted')
           await new Promise(r => setTimeout(r, 500));
