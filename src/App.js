@@ -314,12 +314,12 @@ const SignupForm = () => {
         
         onSubmit={async (values, { props, setSubmitting }) => {
           //alert(JSON.stringify(values, null, 2));
-          await alert("test");
-          window.location.replace("http://www.openner.vc");
-          //axios.post(axiospost, JSON.stringify(values, null, 2))
+          //await alert("test");
+          axios.post(axiospost, JSON.stringify(values, null, 2))
           //this.props.history.push('/submitted')
           await new Promise(r => setTimeout(r, 500));
           setSubmitting(false);
+          window.location.replace("http://static-website-bucket1120.s3-website.eu-west-2.amazonaws.com");
         }}
       > 
         <Form>

@@ -18,4 +18,4 @@ const routes = (
 
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(routes, rootElement);
+ReactDOM.render(< App />, rootElement);
